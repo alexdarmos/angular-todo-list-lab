@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ToDo">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body>
+    <div class="container" ng-controller="ToDoController as $ctrl">
+
+        <h1>TODO List</h1>
+        <p>A place to store the things you have to do!</p>
+        <input type="text" ng-model="filter" placeholder="Filter your to-dos"/>
+
+        <ol>
+        <li ng-if="!todo.deleted" ng-repeat="todo in $ctrl.todoList | filter: filter">
+            <div class="list-item">
+                <button class="complete-btn" ng-if="!todo.completed" ng-click="todo.completed = $ctrl.completeTask(todo.completed)">Complete</button>
+
+                <div class="task-item" ng-class="{completed: todo.completed}">{{todo.task}}</div>
+
+                <button class="delete-btn" ng-click="todo.deleted = $ctrl.removeTask(todo.deleted)"><img src="assets/close-button.svg"/></button>
+            </div>
+        </li>
+        </ol>
+
+        <input type="text" ng-model="task.item" placeholder="Add your to do"/>
+        <button class="add-btn" ng-click="$ctrl.addTask(task.item)">Add Task</button>
+
+    </div>
+
+    <script src="https://code.angularjs.org/1.7.8/angular.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.controller.js"></script>
+</body>
+
+</html>

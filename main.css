@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    display: flex;
+    justify-content: center;
+    /* align-content: center;
+    align-items: center; */
+    background: rgb(255,36,114);
+    background: linear-gradient(90deg, rgba(255,36,114,1) 0%, rgba(251,82,98,1) 100%);
+    font-family: 'Roboto', sans-serif;
+
+}
+
+h1 {
+    font-weight: 100;
+    margin-bottom: -10px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px #ccc;
+}
+
+.container {
+    display:flex;
+    flex-direction: column;
+    border: solid 1px black;
+    border-radius: 5px;
+    width: 500px;
+    background-color: white;
+    padding: 0px 25px 25px 25px;
+}
+
+.container > * {
+    margin-bottom: 10px;
+}
+
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-item > * {
+    margin: 5px;
+}
+
+
+.completed {
+    text-decoration: line-through;
+}
+
+.complete-btn {
+    background: none;
+    border: solid 1px rgb(255,36,114);
+    color: rgb(255,36,114);
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.task-item{
+    margin-right: auto;
+}
+
+.add-btn {
+    background-color: rgb(255,36,114);
+    padding: 10px 0px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
