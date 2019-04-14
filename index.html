@@ -10,12 +10,11 @@
 </head>
 
 <body>
-    <div class="container" ng-controller="ToDoController as $ctrl">
-
+    <list-component></list-component>
+    <!-- <div class="container" ng-controller="ToDoController as $ctrl">
         <h1>TODO List</h1>
         <p>A place to store the things you have to do!</p>
         <input type="text" ng-model="filter" placeholder="Filter your to-dos"/>
-
         <ol>
         <li ng-if="!todo.deleted" ng-repeat="todo in $ctrl.todoList | filter: filter">
             <div class="list-item">
@@ -27,15 +26,23 @@
             </div>
         </li>
         </ol>
-
         <input type="text" ng-model="task.item" placeholder="Add your to do"/>
         <button class="add-btn" ng-click="$ctrl.addTask(task.item)">Add Task</button>
-
-    </div>
+    </div> -->
 
     <script src="https://code.angularjs.org/1.7.8/angular.js"></script>
     <script src="app.module.js"></script>
-    <script src="app.controller.js"></script>
+    <script src="components/todo-list/todoList.js"></script>
+    <script src="components/todo-task/todoTask.js"></script>
+    <script src="components/todo-add/todoAdd.js"></script>
+    <script src="components/todo-filter/todoFilter.js"></script>
+
+
+
+
+    <!-- <script src="app.controller.js"></script> -->
+
+
 </body>
 
 </html>
