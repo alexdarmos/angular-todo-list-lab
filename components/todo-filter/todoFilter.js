@@ -2,6 +2,7 @@
 
 angular.module("ToDo").component("filterComponent", {
     bindings: {
+      search: "="
       
     },
   
@@ -11,5 +12,5 @@ angular.module("ToDo").component("filterComponent", {
 
     }],
   
-    template: `<input type="text" ng-model="filter" placeholder="Filter your to-dos"/>`
+    template: `<input type="text" placeholder="Filter your to-dos" ng-model="$ctrl.search"/>`
   });

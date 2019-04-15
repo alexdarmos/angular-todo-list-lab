@@ -4,6 +4,7 @@ angular.module("ToDo").component("listComponent", {
     bindings: {},
     controller: [function () {
         const $ctrl = this;
+        $ctrl.search = "";
 
         $ctrl.todoList = [
             {
@@ -50,8 +51,8 @@ angular.module("ToDo").component("listComponent", {
 <h1>TODO List</h1>
 <p>A place to store the things you have to do!</p>
 
-<filter-component></filter-component>
-<task-component tasks="$ctrl.todoList" complete-task="$ctrl.completeTask()" remove-task="$ctrl.removeTask()"></task-component>
+<filter-component search="search"></filter-component>
+<task-component search="search" tasks="$ctrl.todoList" complete-task="$ctrl.completeTask()" remove-task="$ctrl.removeTask()"></task-component>
 <add-component add-task="$ctrl.addTask(newTask)"></add-component>
 
 </div>`

@@ -4,7 +4,8 @@ angular.module("ToDo").component("taskComponent", {
   bindings: {
     tasks: "<",
     completeTask: "&",
-    removeTask: "&"
+    removeTask: "&",
+    search: "<"
   },
 
   controller: [function(){
@@ -12,7 +13,7 @@ angular.module("ToDo").component("taskComponent", {
   }],
 
   template: `<ol>
-  <li ng-if="!todo.deleted" ng-repeat="todo in $ctrl.tasks | filter: filter">
+  <li ng-if="!todo.deleted" ng-repeat="todo in $ctrl.tasks | filter: $ctrl.search">
       <div class="list-item">
 
       <button class="complete-btn" ng-if="!todo.completed" ng-click="todo.completed=$ctrl.completeTask()">Complete</button>
